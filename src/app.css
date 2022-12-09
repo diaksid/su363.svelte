@@ -1,0 +1,39 @@
+/*@import '/assets/fonts/open-sans/variable';*/
+@import '$lib/assets/tailwindcss';
+
+@layer base {
+  body {
+    @apply text-slate-900 dark:text-slate-100
+             bg-neutral-50 dark:bg-slate-800;
+  }
+  main {
+    @apply relative
+             min-h-screen pt-16;
+  }
+
+  h1 {
+    @apply font-bold tracking-wide
+             text-3xl sm:text-4xl md:text-4.5xl lg:text-5xl
+             text-gray-700 dark:text-gray-300;
+  }
+
+  h2 {
+    @apply text-3xl sm:text-3.5xl md:text-4xl lg:text-4.5xl
+             text-gray-600 dark:text-gray-400;
+  }
+
+  h3 {
+    @apply text-2xl sm:text-2.5xl md:text-3.5xl lg:text-4xl
+           text-gray-500 dark:text-gray-300;
+  }
+
+  h4 {
+    @apply text-xl;
+  }
+
+  h2,
+  h3,
+  h4 {
+    @apply font-semibold;
+  }
+}

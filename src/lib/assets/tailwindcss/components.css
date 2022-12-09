@@ -1,0 +1,22 @@
+@layer components {
+  .wrapper {
+    @apply w-full px-2 sm:px-4;
+  }
+
+  .content {
+    @apply w-full px-4 mx-auto lg:max-w-5xl;
+  }
+  .content p {
+    @apply text-justify;
+  }
+  .content ul {
+    @apply list-outside list-disc;
+  }
+
+  .button {
+    @apply flex items-center
+           max-w-min my-8 mx-auto px-4 py-2
+           font-semibold leading-6
+           border rounded-md shadow;
+  }
+}
