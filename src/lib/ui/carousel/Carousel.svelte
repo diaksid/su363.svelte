@@ -66,13 +66,14 @@
 
   const ANIMATION_DELAY = 60;
   const loop = (): void => {
-    if (carousel.getAnimations({ subtree: true }).find((a) => a.playState === 'running'))
-      timeout(loop, ANIMATION_DELAY / 2);
-    else timeout(next);
+    if (carousel)
+      if (carousel.getAnimations({ subtree: true }).find((a) => a.playState === 'running'))
+        timeout(loop, ANIMATION_DELAY / 2);
+      else timeout(next);
   };
   const finish = (): void => {
     if (play) {
-      carousel.getAnimations({ subtree: true }).forEach((a) => a.finish());
+      carousel?.getAnimations({ subtree: true }).forEach((a) => a.finish());
       timeoutClear();
     }
   };
