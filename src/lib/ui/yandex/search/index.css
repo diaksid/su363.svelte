@@ -1,0 +1,12 @@
+#ya-site-results > div[class^="results"] {
+  @apply opacity-0;
+}
+
+#ya-site-results .b-head__r {
+  @apply p-0 align-middle;
+}
+
+#ya-site-results .b-pager__current,
+#ya-site-results .b-pager__select {
+  @apply pt-0.5 pb-1 px-1.5 rounded !bg-slate-500;
+}

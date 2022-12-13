@@ -9,9 +9,8 @@
   const apikey = import.meta.env.VITE_YA_API_MAPS;
 
   if (apikey) {
-    const upload = () => typeof ymaps !== 'undefined' && ymaps?.Map && ymaps?.Placemark;
-
     let interval: Timeout;
+    const upload = () => typeof ymaps !== 'undefined' && ymaps?.Map && ymaps?.Placemark;
     const mount = () => {
       interval = setInterval(() => {
         if (upload()) {
