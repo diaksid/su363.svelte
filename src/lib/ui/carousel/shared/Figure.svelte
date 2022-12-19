@@ -36,7 +36,5 @@
       {image.title}
     </figcaption>
   {/if}
-  <link
-    rel="image"
-    href={image.src} />
+  <link rel="image" href={image.src} />
 </figure>

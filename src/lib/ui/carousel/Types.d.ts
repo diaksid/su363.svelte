@@ -1,19 +1,19 @@
 interface Image {
-  src: string;
-  width: number;
-  height: number;
-  title?: string;
+  src: string,
+  width: number,
+  height: number,
+  title?: string
 }
 
 interface Item {
-  id: number;
-  order: number;
-  data: Element | Image;
+  id: number,
+  order: number,
+  data: Element | Image
 }
 
 interface Css {
-  item?: string;
-  button?: string;
+  item?: string,
+  button?: string
 }
 
 type Show = number | ((x: number) => number);
@@ -28,4 +28,14 @@ type Loaded = ((e: Event) => void) | undefined;
 
 type Timeout = string | number | NodeJS.Timeout | undefined;
 
-export type { Image, Item, Css, Show, Controls, Easing, Loader, Loaded, Timeout };
+export type {
+  Image,
+  Item,
+  Css,
+  Show,
+  Controls,
+  Easing,
+  Loader,
+  Loaded,
+  Timeout
+};

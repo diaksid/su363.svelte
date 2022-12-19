@@ -1,6 +1,7 @@
+import type { UserConfig } from 'vite';
 import { sveltekit } from '@sveltejs/kit/vite';
 import { imagetools } from 'vite-imagetools';
-import type { UserConfig } from 'vite';
+//import { minifyPlugin } from './vite.plugins'
 
 /*
 import { readFileSync } from 'fs';
@@ -25,7 +26,8 @@ const config: UserConfig = {
         meta: 'width;height;quality;src'
       })
     })
-  ],
+//  minifyPlugin(),
+],
   test: {
     include: ['src/**/*.{test,spec}.{js,ts}']
   },

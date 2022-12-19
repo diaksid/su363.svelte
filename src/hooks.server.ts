@@ -2,15 +2,17 @@ import type { Handle } from '@sveltejs/kit';
 
 import * as cookie from 'cookie';
 
-import { minify } from 'html-minifier';
 import { building } from '$app/environment';
+import { minify } from 'html-minifier-terser';
 
 const minification_options = {
   collapseBooleanAttributes: true,
+  collapseInlineTagWhitespace: true,
   collapseWhitespace: true,
   decodeEntities: true,
   minifyCSS: true,
   minifyJS: true,
+  minifyURLs: true,
   removeAttributeQuotes: true,
   removeComments: true,
   removeOptionalTags: true,
@@ -39,7 +41,7 @@ export const handle: Handle = async ({ event, resolve }) => {
   }
 
   if (building && response.headers.get('content-type') === 'text/html') {
-    return new Response(minify(await response.text(), minification_options), {
+    return new Response(await minify(await response.text(), minification_options), {
       status: response.status,
       headers: response.headers
     });
