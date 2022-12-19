@@ -74,6 +74,7 @@
 
     <nav
       bind:this={nav}
+      id="navbar"
       class="grid align-middle
            grid-cols-1 lg:auto-cols-max lg:grid-flow-col lg:gap-4
            absolute z-0 left-0 top-0 mt-12 ml-1 rounded-md lg:static lg:mt-0 lg:ml-0 lg:rounded-none

@@ -30,12 +30,11 @@
   onMount(() => (text = $page.url.searchParams.get('text')));
 </script>
 
-<!--div class="ya-site-form ya-site-form_inited_no {className}"-->
 <form
   bind:this={form}
   on:submit|self={handleSubmit}
   id="ya-site-form"
-  class="flex flex-row justify-between items-center gap-3
+  class="flex flex-row justify-between items-start gap-3
          {className}"
   class:flex-row-reverse={reload}
   action="/search"
@@ -53,15 +52,25 @@
     type="hidden"
     name="reqenc"
     value="" />
-  <input
-    bind:value={text}
-    class="grow py-0.5 px-2
+  <div class="relative grow">
+    <input
+      bind:value={text}
+      class="w-full py-0.5 px-2
            text-slate-700 bg-slate-300 rounded
            focus:bg-white focus:outline-none"
-    class:text-red-800={!validation()}
-    type="search"
-    placeholder="Яндекс"
-    name="text" />
+      class:text-red-800={!validation()}
+      type="search"
+      name="text" />
+    <div
+      class="absolute bottom-0 py-0.5 px-2
+             opacity-80 font-semibold text-gray-500 first-letter:text-red-700
+             transition-all duration-500 ease-in-out"
+      class:right-0={reload}
+      class:bottom-full={text}
+      class:opacity-100={text}>
+      Яндекс
+    </div>
+  </div>
   <button
     class="text-sky-600 hover:text-sky-300 disabled:!text-gray-500/50"
     type="submit"
@@ -70,13 +79,5 @@
       icon="wpf:search"
       class="h-7 w-7 -mt-0.5"
       hFlip={!reload} />
-    <!--svg
-        class="h-8 w-8 -mt-0.5"
-        viewBox="0 0 24 24"
-        ><path
-          fill="currentColor"
-          d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5A6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5S14 7.01 14 9.5S11.99 14 9.5 14z" />
-        </svg-->
   </button>
 </form>
-<!--/div-->

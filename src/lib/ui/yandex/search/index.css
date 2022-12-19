@@ -1,7 +1,17 @@
+#ya-site-form [type="search"]:focus + div {
+    @apply bottom-full opacity-100;
+}
+
 #ya-site-results.custom {
   @apply text-slate-700 dark:text-slate-300 
          bg-transparent
          transition-all ease-in origin-top;
+}
+
+#ya-site-results.custom:empty {
+  @apply h-[20vmin]
+         bg-no-repeat bg-center bg-loading-data
+         bg-1/4 xs:bg-1/5 md:bg-1/10;
 }
 
 #ya-site-results.custom > div[class^="results"] {
