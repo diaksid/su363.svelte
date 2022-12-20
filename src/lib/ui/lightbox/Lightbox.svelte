@@ -1,9 +1,9 @@
 <script lang="ts">
   import { onMount } from 'svelte';
-  import Overlay from './shared/Overlay.svelte';
-  import Header from './shared/Header.svelte';
-  import Footer from './shared/Footer.svelte';
-  import Body from './shared/Body.svelte';
+  import Overlay from './components/Overlay.svelte';
+  import Header from './components/Header.svelte';
+  import Footer from './components/Footer.svelte';
+  import Body from './components/Body.svelte';
   import type { Options, Css, Loader } from './Types';
 
   let className: string = '';

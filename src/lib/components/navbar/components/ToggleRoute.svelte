@@ -2,7 +2,7 @@
   import { route } from '$stores';
   import { Icon } from '$ui/iconfy';
 
-  let className: string | null = null;
+  let className = '';
   export { className as class };
   export let size = 24;
 
@@ -11,12 +11,13 @@
 </script>
 
 <button
-  class={className}
+  on:click={route.change}
+  class="relative z-10 flex
+         {className}"
   type="button"
   aria-haspopup="true"
   aria-expanded="false"
-  aria-labelledby=""
-  on:click={route.change}>
+  aria-labelledby="">
   <Icon
     {icon}
     {rotate}

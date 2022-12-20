@@ -1,5 +1,5 @@
-#ya-site-form [type="search"]:focus + div {
-    @apply bottom-full opacity-100;
+#ya-site-form [type='search']:focus ~ div {
+  @apply bottom-full bg-transparent opacity-100;
 }
 
 #ya-site-results.custom {
@@ -14,7 +14,7 @@
          bg-1/4 xs:bg-1/5 md:bg-1/10;
 }
 
-#ya-site-results.custom > div[class^="results"] {
+#ya-site-results.custom > div[class^='results'] {
   @apply opacity-0;
 }
 

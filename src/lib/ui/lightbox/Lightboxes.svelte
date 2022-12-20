@@ -1,11 +1,11 @@
 <script lang="ts">
   import { onMount, setContext } from 'svelte';
   import { writable } from 'svelte/store';
-  import Overlay from './shared/Overlay.svelte';
-  import Header from './shared/Header.svelte';
-  import Footer from './shared/Footer.svelte';
-  import Body from './shared/Body.svelte';
-  import Controller from './shared/Controller.svelte';
+  import Overlay from './components/Overlay.svelte';
+  import Header from './components/Header.svelte';
+  import Footer from './components/Footer.svelte';
+  import Body from './components/Body.svelte';
+  import Controller from './components/Controller.svelte';
   import type { Writable } from 'svelte/store';
   import type { Options, Css, Item, Loader } from './Types';
 

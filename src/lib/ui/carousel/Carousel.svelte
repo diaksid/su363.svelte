@@ -2,8 +2,8 @@
   import { tick, onMount, onDestroy } from 'svelte';
   import { quintOut } from 'svelte/easing';
   import { flip } from 'svelte/animate';
-  import Figure from './shared/Figure.svelte';
-  import Buttons from './shared/Buttons.svelte';
+  import Figure from './components/Figure.svelte';
+  import Buttons from './components/Buttons.svelte';
   import type { Image, Item, Css, Show, Controls, Easing, Loader, Loaded, Timeout } from './Types';
 
   let className = '';
