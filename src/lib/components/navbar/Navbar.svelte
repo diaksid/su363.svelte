@@ -90,15 +90,18 @@
              transition-opacity ease-in-out"
       style:transition-duration={`${duration}ms`}>
       {#each navigation as link}
+        {@const disabled = link.href === $page.url.pathname}
         <!-- sveltekit:prefetch / sveltekit:prefetch -->
         <a
           on:click={click}
-          class:disabled={link.href === $page.url.pathname}
+          class:disabled
           class="py-2 px-6 lg:px-2
                 text-slate-300 lg:text-slate-700 fixed:text-slate-300 dark:text-slate-300
                 hover:!text-sky-300 disabled:!text-cyan-600
                 hover:bg-gray-500/50 lg:hover:bg-transparent"
-          href={link.href}>
+          href={link.href}
+          itemprop={disabled ? undefined : 'relatedLink' }
+          role={disabled ? 'none' : undefined}>
           {#if link.href === '/'}
             <Icon
               class="mt-0.5"

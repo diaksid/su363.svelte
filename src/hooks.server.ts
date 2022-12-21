@@ -23,12 +23,29 @@ const minification_options = {
   useShortDoctype: true
 };
 
+const microdata = (pathname: string) => {
+  const data: any = {};
+  switch (pathname) {
+    case '/about':
+      data.page = 'AboutPage';
+      break;
+    case '/contacts':
+      data.page = 'ContactPage';
+      break;
+    default:
+      data.page = 'WebPage';
+  }
+  return data;
+};
+
 export const handle: Handle = async ({ event, resolve }) => {
   const cookies = cookie.parse(event.request.headers.get('cookie') || '');
 
   event.locals.userid = cookies['userid'] || crypto.randomUUID();
 
-  const response = await resolve(event);
+  const response = await resolve(event, {
+    //transformPageChunk: ({ html }) => html.replace('%schema.page%', schema(event.url.pathname))
+  });
 
   if (!cookies['userid']) {
     response.headers.set(
@@ -40,8 +57,11 @@ export const handle: Handle = async ({ event, resolve }) => {
     );
   }
 
-  if (building && response.headers.get('content-type') === 'text/html') {
-    return new Response(await minify(await response.text(), minification_options), {
+  if (response.headers.get('content-type') === 'text/html') {
+    const schema = microdata(event.url.pathname);
+    let html = (await response.text()).replace('%schema.page%', schema.page);
+    if (building) html = await minify(html, minification_options);
+    return new Response(html, {
       status: response.status,
       headers: response.headers
     });

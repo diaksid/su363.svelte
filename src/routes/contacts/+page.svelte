@@ -3,6 +3,11 @@
   import { Icon } from '$ui/iconfy';
   import { Map } from '$ui/yandex';
 
+  const canonical = new URL(import.meta.env.VITE_APP_CANONICAL).origin;
+
+  import microdata from '$lib/configs/microdata';
+  const { itemtype, name, logo, email, telephone, address } = microdata.organization;
+
   const title = 'Контакты • СУ 363';
   const description = 'Контакты Строительного Управления № 363';
 
@@ -46,28 +51,18 @@
   <div
     class="content my-auto pb-4
            flex flex-col justify-between gap-7
-           text-base md:text-lg lg:text-xl text-sky-800 dark:text-sky-200 align-middle">
-    <a
-      rel="nofollow noreferrer"
-      class="hover:text-sky-500"
-      href="//clck.ru/EScbc"
-      target="_blank">
-      <Icon
-        icon="material-symbols:location-on-outline"
-        class="inline"
-        width="24"
-        height="24" />
-      115409, г.&nbsp;Москва, Каширское&nbsp;шоссе, д.&nbsp;50, корп.&nbsp;2А
-    </a>
+           text-base md:text-lg lg:text-xl text-sky-800 dark:text-sky-200 align-middle"
+    itemscope
+    {itemtype}>
     <a
       class="hover:text-sky-500"
-      href="tel://+74953636582">
+      href="tel://{telephone.replace(/[\s-()]/g, '')}">
       <Icon
         icon="material-symbols:phone-in-talk-outline"
         class="inline"
         width="24"
         height="24" />
-      +7 (495) 363-65-82
+      <span itemprop="telephone">{telephone}</span>
     </a>
     <a
       class="hover:text-sky-500"
@@ -77,8 +72,38 @@
         class="inline"
         width="24"
         height="24" />
-      mail@su363.ru
+      <span itemprop="email">{email}</span>
     </a>
+    <div
+      style:display="contents"
+      itemprop="address"
+      itemscope
+      itemtype={address.itemtype}>
+      <a
+        rel="nofollow noreferrer"
+        class="hover:text-sky-500"
+        href={address.url}
+        target="_blank"
+        itemprop="url">
+        <Icon
+          icon="material-symbols:location-on-outline"
+          class="inline"
+          width="24"
+          height="24" />
+        <span itemprop="postalCode">{address.postalCode}</span>,
+        <span itemprop="addressLocality">{address.addressLocality}</span>,
+        <span itemprop="streetAddress">{@html address.streetAddress}</span>
+      </a>
+      <meta
+        itemprop="addressRegion"
+        content={address.addressRegion} />
+    </div>
+    <meta
+      itemprop="name"
+      content={name} />
+    <link
+      itemprop="logo"
+      href={`${canonical}${logo}`} />
   </div>
 
   <Map {data} />

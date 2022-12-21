@@ -12,6 +12,8 @@
   {title}
   {description} />
 
+<svelte:body itemtype="https://schema.org/AboutPage" />
+
 <main itemprop="mainContentOfPage">
   <header class="content mb-16">
     <h1 class="title">О предприятии</h1>
