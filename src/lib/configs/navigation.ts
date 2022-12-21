@@ -1,4 +1,4 @@
-const links: NavLink[] = [
+const config: NavLink[] = [
   {
     href: '/',
     label: 'Главная'
@@ -13,4 +13,4 @@ const links: NavLink[] = [
   }
 ];
 
-export default links;
+export default config;

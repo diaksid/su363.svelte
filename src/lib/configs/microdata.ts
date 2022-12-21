@@ -1,7 +1,7 @@
 const config = {
   organization: {
     itemtype: 'http://schema.org/Organization',
-    name: 'Строительное Управление №&nbsp;363',
+    name: 'Строительное Управление № 363',
     logo: '/assets/images/logo.webp',
     email: 'mail@su363.ru',
     telephone: '+7 (495) 363-65-82',
