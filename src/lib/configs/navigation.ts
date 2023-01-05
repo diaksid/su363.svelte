@@ -1,8 +1,8 @@
 const config: NavLink[] = [
-  {
+  /*{
     href: '/',
     label: 'Главная'
-  },
+  },*/
   {
     href: '/about',
     label: 'О!'

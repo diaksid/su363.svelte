@@ -1,7 +1,8 @@
 <script lang="ts">
-  import { time } from '$stores';
+  import { Link } from '$lib/ui';
+  import { time } from '$lib/stores';
 
-  let className: string = '';
+  let className = '';
   export { className as class };
 
   const timer = new Intl.DateTimeFormat('ru', {
@@ -10,23 +11,30 @@
   });
 </script>
 
-<footer class="absolute z-10 left-0 bottom-0 w-full">
+<footer
+  id="footer"
+  class="pt-4 pb-2">
   <div
-    class="container
+    class="wrapper lg:container
            flex flex-row justify-between items-center
            leading-loose font-mono font-thin text-2xs xs:text-xs sm:text-sm sm:tracking-wide text-gray-400/75
            {className}">
-    <div class="ml-4">
-      <a href="/admin">СУ 363</a>
-      © Москва 2022</div>
-    <div class="mr-4">
-      <a
-        rel="noreferrer nofollow"
-        class="hover:text-sky-500"
-        href="https://kit.svelte.dev"
-        target="_blank">
-        Svelte.Kit
-      </a> • <span class="text-slate-400">{timer.format($time)}</span>
+    <Link
+      href="/admin"
+      class="ml-4 hover:text-sky-500"
+      rel="nofollow">
+      © 2022 СУ 363&trade;
+    </Link>
+
+    <div class="px-2 text-center text-slate-400">
+      {timer.format($time)}
     </div>
+
+    <Link
+      href="/privacy"
+      class="mr-4 text-right hover:text-sky-500"
+      itemprop="relatedLink">
+      Политика конфиденциальности
+    </Link>
   </div>
 </footer>

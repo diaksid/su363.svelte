@@ -4,19 +4,13 @@
   }
 
   .content {
-    @apply w-full px-4 mx-auto lg:max-w-5xl;
-  }
-  .content p {
-    @apply text-justify;
-  }
-  .content ul {
-    @apply list-outside list-disc;
+    @apply w-full mx-auto  px-4 xs:px-8 lg:max-w-5xl xl:px-0;
   }
 
   .button {
-    @apply flex items-center
-           max-w-min my-8 mx-auto px-4 py-2
-           font-semibold leading-6
+    @apply flex justify-center items-center
+           max-w-max my-4 mx-auto px-4 py-2
+           font-semibold leading-none
            border rounded-md shadow;
   }
 }

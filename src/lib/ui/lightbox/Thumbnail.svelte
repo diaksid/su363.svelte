@@ -13,14 +13,8 @@
 
 <div
   on:click={() => openImage(id)}
-  class="static cursor-zoom-in"
-  class:svelte-lightbox-thumbnail={true}
+  class="lightbox-thumbnail
+         static cursor-zoom-in"
   {...$$restProps}>
   <slot />
 </div>
-
-<style lang="postcss">
-  :global(.svelte-lightbox-thumbnail > *) {
-    @apply max-w-full h-auto;
-  }
-</style>

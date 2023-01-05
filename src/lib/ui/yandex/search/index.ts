@@ -1,2 +1,2 @@
-export { default as Form } from './Form.svelte';
-export { default as Serp } from './Serp.svelte';
+export { default as YandexSearchForm } from './YandexSearchForm.svelte';
+export { default as YandexSearchSerp } from './YandexSearchSerp.svelte';

@@ -6,6 +6,8 @@
   import Body from './components/Body.svelte';
   import type { Options, Css, Loader } from './Types';
 
+  import './index.css';
+
   let className: string = '';
   export { className as class };
 

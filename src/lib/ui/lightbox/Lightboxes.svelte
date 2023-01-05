@@ -9,8 +9,10 @@
   import type { Writable } from 'svelte/store';
   import type { Options, Css, Item, Loader } from './Types';
 
+  import './index.css';
+
   // Lightbox
-  let className: string | undefined = undefined;
+  let className: undefined | string = undefined;
   export { className as class };
 
   export let css: Css = {};

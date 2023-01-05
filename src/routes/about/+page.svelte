@@ -1,25 +1,29 @@
 <script lang="ts">
   import { onMount } from 'svelte';
-  import { Hit as Metrika } from '$ui/yandex/metrika';
+  import { YandexMetrikaHit } from '$lib/seo/yandex/metrika';
 
-  const title = 'О предприятии • СУ 363';
+  const title = 'СУ 363 • О предприятии';
   const description = 'О предприятии Строительное Управление № 363';
 
   onMount(() => document?.lazyloadInstance?.update());
 </script>
 
-<Metrika
+<YandexMetrikaHit
   {title}
   {description} />
 
 <svelte:body itemtype="https://schema.org/AboutPage" />
 
 <main itemprop="mainContentOfPage">
-  <header class="content mb-16">
-    <h1 class="title">О предприятии</h1>
+  <header class="content">
+    <h1
+      class="title"
+      itemprop="name">
+      О предприятии
+    </h1>
   </header>
 
-  <div class="content pb-16">
+  <div class="content readable">
     <h2 class="mb-4">Основные направления деятельности:</h2>
 
     <ul class="pl-8 leading-7">

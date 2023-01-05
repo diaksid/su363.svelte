@@ -14,7 +14,8 @@
 
 <div
   class:fullscreen
-  class="relative z-30 w-auto h-12
+  class="lightbox-header
+         relative z-30 w-auto h-12
          flex justify-end items-center
          linecap-round linejoin-round text-4xl text-gray-200/50 cursor-default
          {css.header}">
@@ -42,9 +43,3 @@
     </button>
   {/if}
 </div>
-
-<style lang="postcss">
-  div.fullscreen {
-    @apply fixed top-0 left-0 right-0;
-  }
-</style>

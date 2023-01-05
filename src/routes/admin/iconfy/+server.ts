@@ -1,5 +1,5 @@
 import { building } from '$app/environment';
-import upload from '$ui/iconfy/upload';
+import upload from '$lib/ui/iconfy/upload';
 
 const data = building ? null : await upload();
 

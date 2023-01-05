@@ -1,7 +1,7 @@
 <script lang="ts">
   import { createEventDispatcher } from 'svelte';
-  import { Icon } from '$ui/iconfy';
-  import { outside } from '$utils/event';
+  import Icon from '$lib/ui/iconfy';
+  import { outside } from '$lib/utils/event';
 
   const dispatch = createEventDispatcher();
 

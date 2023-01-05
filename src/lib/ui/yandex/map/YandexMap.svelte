@@ -42,7 +42,7 @@
 {#if apikey}
   <section
     id="ymap"
-    class="w-full mt-auto h-[50vh]
+    class="w-full h-[50vh]
         bg-no-repeat bg-center bg-loading bg-1/5 lg:bg-1/10
         bg-gray-300 dark:bg-gray-500
         border-t-4 border-slate-200 dark:border-slate-800

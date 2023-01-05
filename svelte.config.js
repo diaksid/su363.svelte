@@ -3,7 +3,7 @@ import { dirname, resolve } from 'path';
 
 import adapterStatic from '@sveltejs/adapter-static';
 import adapterNode from '@sveltejs/adapter-node';
-import preprocess from 'svelte-preprocess';
+import { vitePreprocess } from '@sveltejs/kit/vite';
 
 import 'dotenv/config';
 const toStatic = process.env.ADAPTER === 'static';
@@ -18,16 +18,11 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
-  preprocess: preprocess({
-    postcss: true
-  }),
+  preprocess: vitePreprocess(),
 
   kit: {
     alias: {
-      $components: resolve(__dirname, './src/lib/components'),
-      $stores: resolve(__dirname, './src/stores'),
-      $ui: resolve(__dirname, './src/lib/ui'),
-      $utils: resolve(__dirname, './src/lib/utils')
+      $assets: resolve(__dirname, 'static')
     },
 
     adapter: adapter(options)

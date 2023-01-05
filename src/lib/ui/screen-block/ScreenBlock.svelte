@@ -1,22 +1,30 @@
 <script lang="ts">
   import { onMount } from 'svelte';
+  import icon from './default.svg';
 
-  let className: string = '';
+  let className = '';
   export { className as class };
 
+  export let duration = 1000;
+
   let node: HTMLElement;
-  onMount(() => {
-    node.style.opacity = '0';
+
+  const close = () => {
+    node.style.transitionDuration = `${duration}ms`;
     node.style.pointerEvents = node.style.touchAction = 'none';
-    setTimeout(() => node.remove(), 2001);
-  });
+    node.style.opacity = '0';
+    setTimeout(() => node.remove(), duration);
+  };
+
+  onMount(() => setTimeout(close, 100));
 </script>
 
 <div
+  bind:this={node}
   class="fixed z-50 top-0 left-0 flex flex-col justify-center items-center
          w-screen h-screen
-         bg-no-repeat bg-center bg-screen-block bg-1/4 sm:bg-1/10 lg:bg-1/20
-         transition-opacity duration-2000 ease-out
+         bg-no-repeat bg-center bg-1/4 sm:bg-1/10 lg:bg-1/20
+         transition-opacity ease-out
          {className}"
-  hidden
-  bind:this={node} />
+  style:background-image={`url(${icon})`}
+  hidden />

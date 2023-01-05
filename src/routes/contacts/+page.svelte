@@ -1,14 +1,14 @@
 <script lang="ts">
-  import { Hit as Metrika } from '$ui/yandex/metrika';
-  import { Icon } from '$ui/iconfy';
-  import { Map } from '$ui/yandex';
+  import { YandexMetrikaHit } from '$lib/seo/yandex/metrika';
+  import Icon from '$lib/ui/iconfy';
+  import { YandexMap } from '$lib/ui/yandex';
 
   const canonical = new URL(import.meta.env.VITE_APP_CANONICAL).origin;
 
   import microdata from '$lib/configs/microdata';
   const { itemtype, name, logo, email, telephone, address } = microdata.organization;
 
-  const title = 'Контакты • СУ 363';
+  const title = 'СУ 363 • Контакты';
   const description = 'Контакты Строительного Управления № 363';
 
   const data = {
@@ -37,19 +37,23 @@
   };
 </script>
 
-<Metrika
+<YandexMetrikaHit
   {title}
   {description} />
 
 <main
-  class="flex flex-col dark:bg-transparent"
+  class="justify-between min-h-screen"
   itemprop="mainContentOfPage">
-  <header class="content w-full pb-4">
-    <h1 class="title">Контакты</h1>
+  <header class="content mb-0">
+    <h1
+      class="title"
+      itemprop="name">
+      Контакты
+    </h1>
   </header>
 
   <div
-    class="content my-auto pb-4
+    class="content py-4
            flex flex-col justify-between gap-7
            text-base md:text-lg lg:text-xl text-sky-800 dark:text-sky-200 align-middle"
     itemscope
@@ -106,5 +110,5 @@
       href={`${canonical}${logo}`} />
   </div>
 
-  <Map {data} />
+  <YandexMap {data} />
 </main>

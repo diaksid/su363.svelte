@@ -9,10 +9,13 @@
   <meta
     name="viewport"
     content="width=device-width" />
+  <meta
+    name="robots"
+    content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  %sveltekit.head%
   <link
     rel="manifest"
     href="/manifest.webmanifest" />
-  %sveltekit.head%
   <meta
     name="msapplication-config"
     content="/browserconfig.xml" />
@@ -24,7 +27,9 @@
 <body
   itemscope
   itemtype="https://schema.org/%schema.page%">
-  <div style="display:contents">%sveltekit.body%</div> 
+  <div class="flex flex-col min-h-screen">
+    %sveltekit.body%
+  </div>
 </body>
 
 </html>

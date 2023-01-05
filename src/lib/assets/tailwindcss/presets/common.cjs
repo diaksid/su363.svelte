@@ -1,31 +1,27 @@
-const defaultTheme = require('tailwindcss/defaultTheme');
+//const defaultTheme = require('tailwindcss/defaultTheme');
 //const colors = require('tailwindcss/colors');
-
-const plugin = require('tailwindcss/plugin');
-
-const disabled = plugin(function ({ addVariant }) {
-  addVariant('disabled', ['&.disabled', '&[disabled]']);
-});
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: 'class',
 
   theme: {
-    screens: {
-      '2xs': '320px',
-      xs: '480px',
-      ...defaultTheme.screens
-    },
-    container: {
-      center: true,
-      padding: {
-        DEFAULT: '.5rem',
-        sm: '1rem',
-        xl: '2rem'
-      }
-    },
     extend: {
+      container: {
+        center: true,
+        padding: {
+          DEFAULT: '1rem',
+          xs: '2rem',
+          sm: '3rem',
+          lg: '4rem',
+          '2xl': '5rem'
+        }
+      },
+      screens: {
+        '2xs': '320px',
+        xs: '480px',
+        '3xl': '1600px'
+      },
       fontSize: {
         '3xs': '0.5rem',
         '2xs': '0.625rem',
@@ -45,28 +41,29 @@ module.exports = {
         'center-top': 'center top'
       },
       spacing: {
-        inherit: 'inherit',
         '1/7': '14.285714%',
         '1/8': '12.5%',
         '1/9': '11.111111%',
         '1/10': '10%',
-        '1/11': '9.090909%'
+        '1/11': '9.090909%',
+        contain: 'contain',
+        inherit: 'inherit'
       },
       maxWidth: {
-        inherit: 'inherit',
-        none: 'none'
+        auto: 'auto',
+        inherit: 'inherit'
       },
       minWidth: {
-        inherit: 'inherit',
-        none: 'none'
+        auto: 'auto',
+        inherit: 'inherit'
       },
       maxHeight: {
-        inherit: 'inherit',
-        none: 'none'
+        auto: 'auto',
+        inherit: 'inherit'
       },
       minHeight: {
-        inherit: 'inherit',
-        none: 'none'
+        auto: 'auto',
+        inherit: 'inherit'
       },
       aspectRatio: {
         '3/4': '3 / 4',
@@ -77,6 +74,7 @@ module.exports = {
       transitionDuration: {
         1500: '1500ms',
         2000: '2000ms',
+        2500: '2500ms',
         3000: '3000ms',
         5000: '5000ms'
       },
@@ -86,19 +84,9 @@ module.exports = {
     }
   },
 
-  /*variants: {
-    extend: {
-      textColor: ['disabled'],
-      backgroundColor: ['disabled'],
-      borderColor: ['disabled']
-    }
-  },*/
-
   plugins: [
-    disabled,
-    require('../plugins/animation-play-state.cjs'),
-    require('../plugins/svg/stroke-linecap.cjs'),
-    require('../plugins/svg/stroke-linejoin.cjs'),
-    require('../plugins/svg/vector-effect.cjs')
+    require('../plugins/base.cjs'),
+    require('../plugins/utilities.cjs'),
+    require('../plugins/current.cjs')
   ]
 };

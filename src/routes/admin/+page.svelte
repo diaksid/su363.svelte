@@ -1,8 +1,8 @@
 <script lang="ts">
-  import { Icon } from '$ui/iconfy';
+  import Icon from '$lib/ui/iconfy';
   import Bundle from './Bundle.svelte';
-  import bundles from '$ui/iconfy/bundles.json';
-  import custom from '$ui/iconfy/custom';
+  import bundles from '$lib/ui/iconfy/bundles.json';
+  import custom from '$lib/ui/iconfy/custom';
 
   //import type { PageData } from './$types';
   //export let data: PageData;
@@ -29,7 +29,7 @@
   <meta
     name="robots"
     content="noindex, follow" />
-  <title>СКМ • Администрирование</title>
+  <title>СУ 363 • Администрирование</title>
 </svelte:head>
 
 <main>

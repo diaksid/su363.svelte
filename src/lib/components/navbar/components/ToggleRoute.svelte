@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { route } from '$stores';
-  import { Icon } from '$ui/iconfy';
+  import { route } from '$lib/stores';
+  import Icon from '$lib/ui/iconfy';
 
   let className = '';
   export { className as class };

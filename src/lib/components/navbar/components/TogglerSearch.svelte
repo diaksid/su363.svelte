@@ -1,7 +1,7 @@
 <script lang="ts">
   import { onMount } from 'svelte';
-  import { Icon } from '$ui/iconfy';
-  import { Form } from '$ui/yandex/search';
+  import Icon from '$lib/ui/iconfy';
+  import { YandexSearchForm } from '$lib/ui/yandex/search';
 
   let className = '';
   export { className as class };
@@ -46,7 +46,7 @@
   };
 
   let component: ConstructorOfATypedSvelteComponent;
-  onMount(() => (component = Form));
+  onMount(() => (component = YandexSearchForm));
 </script>
 
 <svelte:window on:keydown={handleKey} />

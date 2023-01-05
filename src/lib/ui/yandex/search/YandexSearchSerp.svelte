@@ -1,5 +1,6 @@
 <script lang="ts">
   import { onMount } from 'svelte';
+  import { afterNavigate } from '$app/navigation';
   import './index.css';
 
   let className = '';
@@ -15,13 +16,15 @@
   };
 
   onMount(() => {
-    document.querySelectorAll('#navbar > a').forEach((el: any) => (el.target = '_self'));
     const script = document.createElement('script');
     script.src = 'https://site.yandex.net/v2.0/js/all.js';
     script.async = true;
     script.addEventListener('load', load);
     document.body.appendChild(script);
   });
+  afterNavigate(() =>
+    document.querySelectorAll('#navbar a, #footer a').forEach((el: any) => (el.target = '_self'))
+  );
 </script>
 
 <div

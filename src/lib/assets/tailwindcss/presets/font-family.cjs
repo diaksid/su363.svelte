@@ -8,16 +8,16 @@ const fontFamily = ['Roboto', '"Helvetica Neue"']
 module.exports = {
   theme: {
     extend: {
-      fontFamily: {
+      /*fontFamily: {
         sans: fontFamily,
         display: fontFamily,
         body: fontFamily
-      }
-      /*fontFamily: {
-        sans: ['"Open Sans"', ...defaultTheme.fontFamily.sans],
-        display: ['"Open Sans"', ...defaultTheme.fontFamily.sans],
-        body: ['"Open Sans"', ...defaultTheme.fontFamily.sans]
       }*/
+      fontFamily: {
+        sans: ['"Open Sans"', ...fontFamily],
+        display: ['"Open Sans"', ...fontFamily],
+        body: ['"Open Sans"', ...fontFamily]
+      }
     }
   }
 };

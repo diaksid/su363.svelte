@@ -8,12 +8,6 @@
          transition-all ease-in origin-top;
 }
 
-#ya-site-results.custom:empty {
-  @apply h-[20vmin]
-         bg-no-repeat bg-center bg-loading-data
-         bg-1/4 xs:bg-1/5 md:bg-1/10;
-}
-
 #ya-site-results.custom > div[class^='results'] {
   @apply opacity-0;
 }

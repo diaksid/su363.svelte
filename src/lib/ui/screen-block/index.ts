@@ -1,1 +1,2 @@
-export { default as ScreenBlock } from './ScreenBlock.svelte'
+import ScreenBlock from './ScreenBlock.svelte';
+export default ScreenBlock;

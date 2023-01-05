@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Lightboxes, Modal, Thumbnail } from '$ui/lightbox';
+  import { Lightboxes, Modal, Thumbnail } from '$lib/ui/lightbox';
   import placeholder from '$lib/assets/icons/placeholder';
 
   export let data;
@@ -8,7 +8,7 @@
   const loader = () => document?.lazyloadInstance?.update();
 </script>
 
-<section class="container pb-12 sm:pb-16">
+<section class="container">
   <Lightboxes
     class="grid grid-cols-none sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4
              gap-8 md:gap-4 xl:gap-8 2xl:gap-12"

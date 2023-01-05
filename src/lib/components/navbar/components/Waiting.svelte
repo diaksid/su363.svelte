@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Icon } from '$ui/iconfy';
+  import Icon from '$lib/ui/iconfy';
 
   let className = '';
   export { className as class };

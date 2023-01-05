@@ -1,11 +1,9 @@
 <script lang="ts">
   import { browser } from '$app/environment';
   import LazyLoad from 'vanilla-lazyload';
-  import { Navbar } from '$components/navbar';
-  import { Footer } from '$components/footer';
-  import { RouteTransition } from '$ui/route-transition';
-  import { ScreenBlock } from '$ui/screen-block';
-  import { Init as Metrika } from '$ui/yandex/metrika';
+  import { Navbar, Footer } from '$lib/components';
+  import { RouteTransition, ScreenBlock } from '$lib/ui';
+  import { YandexMetrikaInit } from '$lib/seo/yandex/metrika';
 
   import website from '$lib/configs/website';
   const { shortName, themeColor, tileColor } = website;
@@ -17,11 +15,17 @@
 
   import '../app.css';
 
-  if (browser && !document.lazyloadInstance)
-    document.lazyloadInstance = new LazyLoad({
-      // use_native: true,
-      threshold: 0
-    });
+  if (browser) {
+    if (!('color-theme' in localStorage)) {
+      localStorage.setItem('color-theme', 'dark');
+      document.documentElement.classList.add('dark');
+    }
+    if (!document.lazyloadInstance)
+      document.lazyloadInstance = new LazyLoad({
+        // use_native: true,
+        threshold: 0
+      });
+  }
 </script>
 
 <svelte:head>
@@ -50,14 +54,17 @@
     content={shortName} />
 </svelte:head>
 
-<Navbar />
-
-<RouteTransition referesh={data.referesh}>
+<RouteTransition
+  referesh={data.referesh}
+  mode={1}
+  class="flex flex-col grow">
   <slot />
 </RouteTransition>
 
 <Footer />
 
+<Navbar />
+
 <ScreenBlock class="bg-slate-800" />
 
-<Metrika />
+<YandexMetrikaInit />

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Lightboxes, Modal, Thumbnail } from '$ui/lightbox';
+  import { Lightboxes, Modal, Thumbnail } from '$lib/ui/lightbox';
   import placeholder from '$lib/assets/icons/placeholder';
 
   export let data;

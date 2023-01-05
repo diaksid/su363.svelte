@@ -12,7 +12,8 @@
 
 <div
   class:fullscreen
-  class="relative z-20 min-h-[3rem] w-auto p-2
+  class="lightbox-footer
+         relative z-20 min-h-[3rem] w-auto p-2
          flex flex-wrap gap-2 items-center
          leading-none text-white/50 hover:text-white
          cursor-default
@@ -33,9 +34,3 @@
     </div>
   {/if}
 </div>
-
-<style lang="postcss">
-  div.fullscreen {
-    @apply fixed left-0 right-0 bottom-0 px-4;
-  }
-</style>

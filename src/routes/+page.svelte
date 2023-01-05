@@ -1,7 +1,7 @@
 <script lang="ts">
   import { onMount } from 'svelte';
-  import { Hit as Metrika } from '$ui/yandex/metrika';
-  import Grid from '$components/home/Grid.svelte';
+  import { YandexMetrikaHit } from '$lib/seo/yandex/metrika';
+  import Grid from '$lib/components/home/Grid.svelte';
 
   import type { PageData } from './$types';
   export let data: PageData;
@@ -18,21 +18,22 @@
   onMount(() => document?.lazyloadInstance?.update());
 </script>
 
-<Metrika
+<YandexMetrikaHit
   {title}
   {description} />
 
 <main itemprop="mainContentOfPage">
   <div
-    class="container pb-4
+    class="container py-8
               flex flex-wrap items-start"
     itemscope
-    itemtype={itemtype}>
+    {itemtype}>
     <header class="flex flex-col grow mb-5">
       <h1
         class="mb-8
                font-sans font-extrabold text-shadow
-               text-7xl sm:text-9xl">
+               text-7xl sm:text-9xl"
+        itemprop="name">
         <span class="text-rose-700">СУ</span>
         <span class="text-gray-600">363</span>
       </h1>

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Icon } from '$ui/iconfy';
+  import Icon from '$lib/ui/iconfy';
 
   export let prefix: string;
   export let icons: string[];
