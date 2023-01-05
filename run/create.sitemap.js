@@ -20,8 +20,10 @@ const TIMESTAMP = new Date().toISOString();
 const getPages = (location) =>
   fs.readdirSync(location).reduce(
     (accumulator, currentValue) => {
-      if (path.extname(currentValue) === '' && disallow.indexOf(currentValue) === -1)
-        accumulator.push(`${siteUrl}/${currentValue.replace('+page.svelte', '')}`);
+      if (path.extname(currentValue) === '' && disallow.indexOf(currentValue) === -1) {
+        console.log(currentValue);
+        accumulator.push(`${siteUrl}/${currentValue}`);
+      }
       return accumulator;
     },
     [siteUrl]
