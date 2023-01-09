@@ -1,7 +1,6 @@
 <script lang="ts">
-  import { YandexMetrikaHit } from '$lib/seo/yandex/metrika';
-  import Icon from '$lib/ui/iconfy';
-  import { YandexMap } from '$lib/ui/yandex';
+  import { YandexMetrikaHit, YandexMap } from 'daks-svelte';
+  import { Envelope, MapPin, PhoneArrowUpRight } from 'svelte-heros-v2';
 
   const canonical = new URL(import.meta.env.VITE_APP_CANONICAL).origin;
 
@@ -41,15 +40,11 @@
   {title}
   {description} />
 
-<main
+  <main
   class="justify-between min-h-screen"
   itemprop="mainContentOfPage">
   <header class="content mb-0">
-    <h1
-      class="title"
-      itemprop="name">
-      Контакты
-    </h1>
+    <h1 class="title">Контакты</h1>
   </header>
 
   <div
@@ -61,21 +56,17 @@
     <a
       class="hover:text-sky-500"
       href="tel://{telephone.replace(/[\s-()]/g, '')}">
-      <Icon
-        icon="material-symbols:phone-in-talk-outline"
-        class="inline"
-        width="24"
-        height="24" />
+      <PhoneArrowUpRight
+        class="inline -mt-0.5 mr-2"
+        size="24" />
       <span itemprop="telephone">{telephone}</span>
     </a>
     <a
       class="hover:text-sky-500"
-      href="mailto:mail@su363.ru">
-      <Icon
-        icon="material-symbols:mail-outline"
-        class="inline"
-        width="24"
-        height="24" />
+      href="mailto:{email}">
+      <Envelope
+        class="inline -mt-0.5 mr-2"
+        size="24" />
       <span itemprop="email">{email}</span>
     </a>
     <div
@@ -89,11 +80,9 @@
         href={address.url}
         target="_blank"
         itemprop="url">
-        <Icon
-          icon="material-symbols:location-on-outline"
-          class="inline"
-          width="24"
-          height="24" />
+        <MapPin
+          class="inline -mt-0.5 mr-2"
+          size="24" />
         <span itemprop="postalCode">{address.postalCode}</span>,
         <span itemprop="addressLocality">{address.addressLocality}</span>,
         <span itemprop="streetAddress">{@html address.streetAddress}</span>

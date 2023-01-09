@@ -1,7 +1,7 @@
 <script lang="ts">
   import { onMount } from 'svelte';
-  import { YandexMetrikaHit } from '$lib/seo/yandex/metrika';
-  import Grid from '$lib/components/home/Grid.svelte';
+  import { YandexMetrikaHit } from 'daks-svelte';
+  import HomeGrid from '$lib/components/home';
 
   import type { PageData } from './$types';
   export let data: PageData;
@@ -93,5 +93,5 @@
     </div>
   </div>
 
-  <Grid {data} />
+  <HomeGrid {data} />
 </main>

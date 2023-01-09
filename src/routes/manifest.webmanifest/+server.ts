@@ -1,11 +1,16 @@
-import website from '$lib/configs/website';
-const { id, scope, name, shortName, description, display, backgroundColor, themeColor } = website;
+import { promises as fs } from 'fs';
+import { resolve } from 'path';
+
+import app from '$lib/configs/app';
+const { id, scope, name, shortName, description, display, backgroundColor, themeColor } = app;
+
+const pkg = JSON.parse(await fs.readFile(resolve(process.cwd(), 'package.json'), 'utf8'));
 
 const url = new URL(import.meta.env.VITE_APP_CANONICAL);
 
-const any = [128, 192, 256, 384, 512, 'icon.svg'];
-const maskable = [192, 384, 512, 'icon.svg'];
-const monochrome = [128, 192, 256, 'icon.svg'];
+const any = [128, 192, 256, 384, 512];
+const maskable = [192, 384, 512];
+const monochrome = [128, 192, 256];
 const icons: any[] = [];
 const push = (arr = any, purpose = 'any') => {
   arr.forEach((val) => {
@@ -18,7 +23,7 @@ const push = (arr = any, purpose = 'any') => {
         : '';
     const file = png ? `${val}.png` : val;
     icons.push({
-      src: `/favicon/${dir}${file}?v=${import.meta.env.VITE_APP_BUILD}`,
+      src: `/favicon/${dir}${file}?v=${pkg.version}`,
       sizes: png ? `${val}x${val}` : 'any',
       type: `image/${png ? 'png' : 'svg+xml'}`,
       purpose: purpose

@@ -1,24 +1,9 @@
 // See https://kit.svelte.dev/docs/types#app
-// for information about these interfaces
-// and what to do when importing types
 declare namespace App {
-  interface Locals {
-    userid: string;
-  }
+  // interface Locals {}
   // interface PageData {}
   // interface Error {}
   // interface Platform {}
-}
-
-interface MenuItem {
-  label: string;
-  title?: string;
-  handle?: (event?: Event) => void;
-}
-
-interface NavLink extends MenuItem {
-  href: string;
-  links?: NavLink[];
 }
 
 declare module '*?webp' {

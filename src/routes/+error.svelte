@@ -11,7 +11,7 @@
     content="Ошибка в работе приложения" />
 </svelte:head>
 
-<main class="content items-center">
+<main class="content flex flex-col items-center">
   {#if online}
     <h1
       class="w-full

@@ -1,7 +1,6 @@
 <script lang="ts">
   import { onMount } from 'svelte';
-  import { YandexMetrikaHit } from '$lib/seo/yandex/metrika';
-  import { YandexSearchForm, YandexSearchSerp } from '$lib/ui/yandex/search';
+  import { YandexMetrikaHit, YandexSearchForm, YandexSearchSerp } from 'daks-svelte';
 
   const robots = 'noindex, follow';
   const title = 'СУ 363 • Поиск';

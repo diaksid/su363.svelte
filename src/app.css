@@ -1,5 +1,5 @@
-/*@import '/assets/fonts/open-sans/variable';*/
-@import '$lib/assets/tailwindcss';
+@import 'daks-svelte/fonts/open-sans/variable';
+@import 'daks-svelte/tailwindcss';
 
 @layer base {
   :root {
@@ -14,18 +14,17 @@
 
   h1 {
     @apply font-bold tracking-wide
-             text-3xl sm:text-4xl md:text-4.5xl lg:text-5xl
-             text-gray-700 dark:text-gray-300;
+           text-3xl sm:text-4xl md:text-4.5xl lg:text-5xl
+           text-gray-500 dark:text-gray-300;
   }
 
   h2 {
     @apply text-3xl sm:text-3.5xl md:text-4xl lg:text-4.5xl
-             text-gray-600 dark:text-gray-400;
+           text-slate-800 dark:text-slate-500;
   }
 
   h3 {
-    @apply text-2xl sm:text-2.5xl md:text-3.5xl lg:text-4xl
-           text-gray-500 dark:text-gray-300;
+    @apply text-2xl sm:text-2.5xl md:text-3.5xl lg:text-4xl;
   }
 
   h4 {
@@ -66,6 +65,6 @@ main,
 }
 main > header,
 [role='main'] > header {
-  @apply pt-4 sm:pt-5 md:pt-8
+  @apply pt-4 sm:pt-5 md:pt-8 xl:pt-12
          mb-12 md:mb-14 xl:mb-16;
 }

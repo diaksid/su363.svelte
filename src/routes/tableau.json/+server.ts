@@ -1,7 +1,11 @@
-import website from '$lib/configs/website';
-const { tileColor } = website;
+import { promises as fs } from 'fs';
+import { resolve } from 'path';
 
-const version = import.meta.env.VITE_APP_BUILD;
+import app from '$lib/configs/app';
+
+const pkg = JSON.parse(await fs.readFile(resolve(process.cwd(), 'package.json'), 'utf8'));
+const { version } = pkg;
+
 const canonical = new URL(import.meta.env.VITE_APP_CANONICAL).origin;
 
 const data = {
@@ -9,7 +13,7 @@ const data = {
   api_version: 1,
   layout: {
     logo: `${canonical}/favicon/tableau/60.png?v=${version}`, //encodeURIComponent()
-    color: tileColor,
+    color: app.tileColor,
     show_title: true
   }
 };

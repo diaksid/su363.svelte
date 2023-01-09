@@ -6,30 +6,28 @@ const fixed = plugin(function ({ addVariant }) {
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./src/**/*.{html,svelte,ts,js}'],
+  content: [
+    './src/**/*.{html,svelte,ts,js}',
+    './node_modules/daks-svelte/**/*.{svelte,html,ts,js}'
+  ],
 
-  presets: [require('./src/lib/assets/tailwindcss/presets/common.cjs')],
+  darkMode: 'class',
+
+  presets: [
+    require('daks-svelte/assets/tailwindcss/presets/common.cjs'),
+    require('daks-svelte/assets/tailwindcss/presets/font-family.cjs')
+  ],
 
   theme: {
     extend: {
       backgroundImage: {
-        loading: 'url($lib/assets/icons/loading/0.svg)',
-        'loading-data': 'url($lib/assets/icons/loading/data.svg)',
-        'screen-block': 'url($lib/assets/icons/loading/screen-block.svg)'
+        loading: 'url(daks-svelte/assets/icons/loading/0.svg)',
+        'loading-data': 'url(daks-svelte/assets/icons/loading/data.svg)'
       }
-    }
-  },
-
-  variants: {
-    extend: {
-      textColor: ['fixed'],
-      backgroundColor: ['fixed']
     }
   },
 
   plugins: [
     fixed
-    //require('@tailwindcss/aspect-ratio'),
-    //require('@tailwindcss/typography'),
   ]
 };

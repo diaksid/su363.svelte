@@ -1,6 +1,6 @@
 <script lang="ts">
   import { onMount } from 'svelte';
-  import { YandexMetrikaHit } from '$lib/seo/yandex/metrika';
+  import { YandexMetrikaHit } from 'daks-svelte';
 
   const title = 'СУ 363 • О предприятии';
   const description = 'О предприятии Строительное Управление № 363';

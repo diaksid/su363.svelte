@@ -1,9 +1,12 @@
-import website from '$lib/configs/website';
-const { tileColor } = website;
+import { promises as fs } from 'fs';
+import { resolve } from 'path';
+
+import app from '$lib/configs/app';
+
+const pkg = JSON.parse(await fs.readFile(resolve(process.cwd(), 'package.json'), 'utf8'));
+const { version } = pkg;
 
 export const prerender = true;
-
-const build = import.meta.env.VITE_APP_BUILD;
 
 export const GET = function get({ setHeaders }: unknown) {
   const xml = `
@@ -11,12 +14,12 @@ export const GET = function get({ setHeaders }: unknown) {
     <browserconfig>
       <msapplication>
         <tile>
-          <square70x70logo src="/favicon/mstile/70.png?v=${build}" />
-          <square150x150logo src="/favicon/mstile/150.png?v=${build}" />
-          <square310x310logo src="/favicon/mstile/310.png?v=${build}" />
-          <wide310x150logo src="/favicon/mstile/310x150.png?v=${build}" />
-          <TileImage src="/favicon/mstile/150.png?v=${build}" />
-          <TileColor>${tileColor}</TileColor>
+          <square70x70logo src="/favicon/mstile/70.png?v=${version}" />
+          <square150x150logo src="/favicon/mstile/150.png?v=${version}" />
+          <square310x310logo src="/favicon/mstile/310.png?v=${version}" />
+          <wide310x150logo src="/favicon/mstile/310x150.png?v=${version}" />
+          <TileImage src="/favicon/mstile/150.png?v=${version}" />
+          <TileColor>${app.tileColor}</TileColor>
         </tile>
       </msapplication>
     </browserconfig>
