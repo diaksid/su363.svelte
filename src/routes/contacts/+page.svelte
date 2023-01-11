@@ -1,6 +1,5 @@
 <script lang="ts">
-  import { YandexMetrikaHit, YandexMap } from 'daks-svelte';
-  import { Envelope, MapPin, PhoneArrowUpRight } from 'svelte-heros-v2';
+  import { YandexMetrikaHit, YandexMap, Icon } from 'daks-svelte';
 
   const canonical = new URL(import.meta.env.VITE_APP_CANONICAL).origin;
 
@@ -40,7 +39,7 @@
   {title}
   {description} />
 
-  <main
+<main
   class="justify-between min-h-screen"
   itemprop="mainContentOfPage">
   <header class="content mb-0">
@@ -56,17 +55,17 @@
     <a
       class="hover:text-sky-500"
       href="tel://{telephone.replace(/[\s-()]/g, '')}">
-      <PhoneArrowUpRight
-        class="inline -mt-0.5 mr-2"
-        size="24" />
+      <Icon
+        icon="ic:round-phone-in-talk"
+        class="w-6 h-6 inline -mt-0.5 mr-2" />
       <span itemprop="telephone">{telephone}</span>
     </a>
     <a
       class="hover:text-sky-500"
       href="mailto:{email}">
-      <Envelope
-        class="inline -mt-0.5 mr-2"
-        size="24" />
+      <Icon
+        icon="ic:round-mail-outline"
+        class="w-6 h-6 inline -mt-0.5 mr-2" />
       <span itemprop="email">{email}</span>
     </a>
     <div
@@ -80,9 +79,9 @@
         href={address.url}
         target="_blank"
         itemprop="url">
-        <MapPin
-          class="inline -mt-0.5 mr-2"
-          size="24" />
+        <Icon
+          icon="ic:outline-location-on"
+          class="w-6 h-6 inline -mt-0.5 mr-2" />
         <span itemprop="postalCode">{address.postalCode}</span>,
         <span itemprop="addressLocality">{address.addressLocality}</span>,
         <span itemprop="streetAddress">{@html address.streetAddress}</span>

@@ -1,6 +1,6 @@
 {
   "name": "su363.svelte",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "description": "construction company «CD 363»",
   "repository": {
     "type": "git",
@@ -11,7 +11,7 @@
   "private": true,
   "scripts": {
     "clean": "rimraf .svelte-kit && rimraf build",
-    "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+    "check": "rimraf .svelte-kit && svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
     "start": "node build/index.js",
     "cluster": "node run/cluster.js",
@@ -22,7 +22,7 @@
     "create:iconset": "node run/create.iconset.js",
     "create:images": "node run/create.images.js",
     "generate:css": "npx tailwindcss -i ./static/assets/stylesheets/search.css -o ./static/assets/stylesheets/search.min.css --minify --watch",
-    "build": "vite build",
+    "build": "rimraf build && vite build",
     "preview": "vite preview --port=3000",
     "test": "playwright test",
     "test:unit": "vitest"

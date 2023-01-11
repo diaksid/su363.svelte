@@ -25,7 +25,7 @@
 <main itemprop="mainContentOfPage">
   <div
     class="container py-8
-              flex flex-wrap items-start"
+           flex flex-wrap items-start"
     itemscope
     {itemtype}>
     <header class="flex flex-col grow mb-5">
@@ -39,7 +39,7 @@
       </h1>
       <h2
         class="ml-2
-               text-shadow text-xl sm:text-2xl md:text-3xl 2xl:text-5xl">
+               text-shadow text-xl sm:text-2xl md:text-3xl 2xl:text-4xl">
         Строительное Управление №&nbsp;363 Москва
       </h2>
       <meta
@@ -56,8 +56,8 @@
         href={`${canonical}${logo}`} />
     </header>
     <div
-      class="w-full lg:max-w-xs xl:max-w-sm mx-auto lg:pt-4 px-2 mb-4
-             flex flex-col justify-center items-center lg:items-start gap-3 lg:gap-5
+      class="grow lg:max-w-xs xl:max-w-sm lg:pt-4 px-2
+             flex flex-col justify-center items-center gap-y-3 lg:gap-y-5
              text-slate-300"
       itemprop="address"
       itemscope
@@ -73,7 +73,7 @@
       <a
         rel="nofollow noreferrer"
         class="text-center lg:text-start
-               sm:text-lg md:text-xl lg:text-lg
+               sm:text-lg md:text-xl lg:text-lg xl:text-xl
                hover:text-sky-500 hover:text-shadow
                transition-all duration-200 ease-in-out"
         href={address.url}

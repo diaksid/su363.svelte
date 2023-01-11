@@ -6,6 +6,7 @@
   export let data: PageData;
 
   import '../app.css';
+  import '$iconify';
 
   import app from '$lib/configs/app';
   import navigation from '$lib/configs/navigation';

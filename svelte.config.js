@@ -22,7 +22,8 @@ const config = {
 
   kit: {
     alias: {
-      $assets: resolve(__dirname, 'static')
+      $assets: resolve(__dirname, 'static'),
+      $iconify: resolve(__dirname, 'src/lib/assets/iconify')
     },
 
     adapter: adapter(options),
@@ -31,7 +32,7 @@ const config = {
       serviceWorker: 'node_modules/daks-svelte/app/service-worker'
     }
 
-    //inlineStyleThreshold: 8192
+    // inlineStyleThreshold: 8192
   }
 };
 

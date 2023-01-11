@@ -3,8 +3,8 @@
   import { YandexMetrikaHit, YandexSearchForm, YandexSearchSerp } from 'daks-svelte';
 
   const robots = 'noindex, follow';
-  const title = 'СУ 363 • Поиск';
-  const description = 'Поиск на сайте предпрятия Строительное Управление № 363';
+  const title = 'СКМ • Поиск';
+  const description = 'Поиск на сайте предпрятия СКМ';
   const canonical = '';
 
   onMount(() => document?.lazyloadInstance?.update());
@@ -16,13 +16,11 @@
   {description}
   {canonical} />
 
-<main itemprop="mainContentOfPage">
-  <header class="content">
-    <h1
-      class="title"
-      itemprop="name">
-      Результаты поиска
-    </h1>
+<main
+  class="dark:bg-transparent"
+  itemprop="mainContentOfPage">
+  <header class="content w-full mb-8">
+    <h1 class="title">Результаты поиска</h1>
   </header>
 
   <YandexSearchForm
@@ -30,5 +28,5 @@
     reload={true}
     reverse={true} />
 
-  <YandexSearchSerp class="content pr-8 lg:pr-4" />
+  <YandexSearchSerp class="content mb-16 pr-8 lg:pr-4" />
 </main>
